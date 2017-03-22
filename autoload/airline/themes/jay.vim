@@ -21,17 +21,19 @@ let s:fore3 = ['#9e9e9e', 247]
 let g:airline#themes#jay#palette = {}
 
 let s:mid = [s:fore2[0], s:back3[0], s:fore2[1], s:back3[1]]
-let s:bot = [s:fore3[0], s:back2[0], s:fore3[1], s:back2[1]]
+let s:bot_opaque = [s:fore3[0], s:back2[0], s:fore3[1], s:back2[1]]
+let s:bot = [s:fore3[0], 'NONE', s:fore3[1], 'NONE']
+let s:invisible = [s:back3[0], 'NONE', s:back3[1], 'NONE']
 
 let s:N1 = [s:back2[0], s:back4[0], s:back2[1], s:back4[1]]
 let s:I1 = [s:back2[0], s:green[0], s:back2[1], s:green[1]]
 let s:R1 = [s:back2[0], s:purple[0], s:back2[1], s:purple[1]]
 let s:V1 = [s:back2[0], s:blue[0], s:back2[1], s:blue[1]]
 
-let s:N2 = [s:red[0], s:back2[0], s:red[1], s:back2[1]]
-let s:I2 = [s:green[0], s:back2[0], s:green[1], s:back2[1]]
-let s:R2 = [s:purple[0], s:back2[0], s:purple[1], s:back2[1]]
-let s:V2 = [s:blue[0], s:back2[0], s:blue[1], s:back2[1]]
+let s:N2 = [s:red[0], 'NONE', s:red[1], 'NONE']
+let s:I2 = [s:green[0], 'NONE', s:green[1], 'NONE']
+let s:R2 = [s:purple[0], 'NONE', s:purple[1], 'NONE']
+let s:V2 = [s:blue[0], 'NONE', s:blue[1], 'NONE']
 
 let s:inac = [s:back3[0], s:back2[0], s:back3[1], s:back2[1]]
 let s:warn = [s:back2[0], s:orange[0], s:back2[1], s:orange[1], 'bold']
@@ -46,6 +48,7 @@ let g:airline#themes#jay#palette.accents = {'red': [s:red[0], '', s:red[1], '']}
 
 " Normal
 let g:airline#themes#jay#palette.normal = airline#themes#generate_color_map(s:N1, s:mid, s:bot)
+let g:airline#themes#jay#palette.normal.airline_x = s:bot_opaque
 let g:airline#themes#jay#palette.normal.airline_warning = s:warn
 let g:airline#themes#jay#palette.normal.airline_error = s:err
 let g:airline#themes#jay#palette.normal_modified = {'airline_c': s:N2}
@@ -54,6 +57,7 @@ let g:airline#themes#jay#palette.normal_modified.airline_error = s:err
 
 " Insert
 let g:airline#themes#jay#palette.insert = airline#themes#generate_color_map(s:I1, s:mid, s:bot)
+let g:airline#themes#jay#palette.insert.airline_x = s:bot_opaque
 let g:airline#themes#jay#palette.insert.airline_warning = s:warn
 let g:airline#themes#jay#palette.insert.airline_error = s:err
 let g:airline#themes#jay#palette.insert_modified = {'airline_c': s:I2}
@@ -62,6 +66,7 @@ let g:airline#themes#jay#palette.insert_modified.airline_error = s:err
 
 " Replace
 let g:airline#themes#jay#palette.replace = airline#themes#generate_color_map(s:R1, s:mid, s:bot)
+let g:airline#themes#jay#palette.replace.airline_x = s:bot_opaque
 let g:airline#themes#jay#palette.replace.airline_warning = s:warn
 let g:airline#themes#jay#palette.replace.airline_error = s:err
 let g:airline#themes#jay#palette.replace_modified = {'airline_c': s:R2}
@@ -70,6 +75,7 @@ let g:airline#themes#jay#palette.replace_modified.airline_error = s:err
 
 " Visual
 let g:airline#themes#jay#palette.visual = airline#themes#generate_color_map(s:V1, s:mid, s:bot)
+let g:airline#themes#jay#palette.visual.airline_x = s:bot_opaque
 let g:airline#themes#jay#palette.visual.airline_warning = s:warn
 let g:airline#themes#jay#palette.visual.airline_error = s:err
 let g:airline#themes#jay#palette.visual_modified = {'airline_c': s:V2}
@@ -83,10 +89,12 @@ let g:airline#themes#jay#palette.inactive_modified = {'airline_c': s:N2}
 " Tabline
 let g:airline#themes#jay#palette.tabline = {
 	\ 'airline_tabsel': s:T1,
+	\ 'airline_tabhid': s:bot_opaque,
 	\ 'airline_tabtype': s:T2,
 	\ 'airline_tabmod': s:err,
 	\ 'airline_tabmod_unsel': s:T3,
 	\ 'airline_tab_right': s:mid,
 	\ 'airline_tabsel_right': s:T1,
 	\ 'airline_tabmod_right': s:err,
+	\ 'airline_tabhid_right': s:bot_opaque,
 	\ 'airline_tabmod_unsel_right': s:T3}

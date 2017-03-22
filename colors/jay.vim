@@ -240,7 +240,7 @@ call s:HF('TabLine', s:fore2, s:back3)
 call s:HF('TabLineFill', s:none, s:back2)
 call s:HF('TabLineSel', s:back2, s:back4, s:bold)
 
-call s:HF('Comment', s:back4)
+call s:HF('Comment', s:fore4)
 call s:HF('CursorColumn', s:none, s:back2)
 call s:HF('ColorColumn', s:none, s:back2)
 call s:HF('LineNr', s:back4, s:back2)

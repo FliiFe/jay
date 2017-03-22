@@ -1,6 +1,14 @@
 # jay
 Yet another colorscheme for Vim. Inspired by [Molokai](https://github.com/tomasr/molokai).
 
+## About this fork
+
+This fork aims to provide a transparent alternative to the jay colourscheme,
+while staying as close to the original one as possible.
+
+Please note that transparency has to be supported and enabled in your terminal
+configuration.
+
 ## Features
 - Same color palette for both terminal and GUI Vim
 - Light and dark variants
